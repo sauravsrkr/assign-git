@@ -1,0 +1,25 @@
+Q1 :What is a gitignore file and what should it include for a Java project?
+Ans:a) gitignore file is a text document which contains a list of files that you want git to ignore in your work directory. ".gitignore" tells git which files (or patterns) it should ignore.
+    b) It should include
+ .mtj.tmp/  ( which is Mobile Tools for Java (J2ME))
+ # Package Files #
+ *.jar
+ *.war
+ *.nar
+ *.ear
+ *.zip
+ *.tar.gz
+ *.rar  for a java project.
+    
+Q2: What does fast-forward in Git mean?
+A2:Fast-Forward in git means that a pull/rebase was able to update directly to the new revision without having to perform any merges.
+For instance, if you create a new branch from master named "mydev" and you make several commits, as long as nobody else committed to master while you were working you could do a "fast-forward merge" which basically means that git simply moves the HEAD pointer for that branch to the latest commit without doing any hard work.
+If someone else had made a commit before you merged your changes back to master, it would be a standard merge where git had to try and determine if there were any conflicts between the two sets of changes. 
+
+Q3: Why should you have different branches?
+A3:Branches help separate different projects so that it is easy to push out only finished projects. Branches also tend to be easier than cloned directories for pulling in changes and for sharing changes across multiple projects.
+Branches also have the added benefit of allowing users to share a development branch and so work together on a project without disturbing the master branch, which is something we have occasion to do on our project frequently. And keep in mind, ease of branching was one of the reasons we chose git over other source code control systems.
+It is recommended that you leave your master branch clean of any but the shortest of projects. This is primarily because it provides users a clean branch to use to make minor changes without worrying about accidentally pushing out half-baked projects. It also has the added benefit of simplifying how to use git pull and git push when you have more than one branch. 
+
+Q4: In a project how many remote Git repositories do you usually have? 
+Ans - You can have as many remotes as you want, but you must give them different names.
